@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tao&#39;s Notes</title>
-    <link>https://zhoutao822.github.io/</link>
-    <description>Recent content on Tao&#39;s Notes</description>
+    <title>picgo on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/picgo/</link>
+    <description>Recent content in picgo on Tao&#39;s Notes</description>
     <image>
       <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Dec 2021 20:55:38 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hugo Theme PaperMod</title>
-      <link>https://zhoutao822.github.io/posts/hugo-theme-papermod/</link>
-      <pubDate>Sun, 12 Dec 2021 20:55:38 +0800</pubDate>
-      
-      <guid>https://zhoutao822.github.io/posts/hugo-theme-papermod/</guid>
-      <description>PaperMod configurations, favicon generator and mathjax issues</description>
-    </item>
-    
+    <lastBuildDate>Sun, 12 Dec 2021 11:18:58 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/picgo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo On Mac</title>
       <link>https://zhoutao822.github.io/posts/hugo-on-mac/</link>
@@ -28,8 +19,6 @@
       <guid>https://zhoutao822.github.io/posts/hugo-on-mac/</guid>
       <description>Hugo + Github Pages + Typora搭建Markdown博客</description>
     </item>
-    
-    
     
   </channel>
 </rss>
