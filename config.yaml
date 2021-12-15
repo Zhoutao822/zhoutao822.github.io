@@ -9,7 +9,6 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-
 googleAnalytics: UA-123-45
 
 minify:
@@ -22,22 +21,21 @@ params:
   description: "Tao's learning notes"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
-  # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
-  disableThemeToggle: false
+  defaultTheme: dark # dark, light, auto
+  disableThemeToggle: true
 
   ShowReadingTime: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   disableSpecial1stPost: false
   disableScrollToTop: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
 
   comments: true
@@ -50,11 +48,11 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: /favicon.ico
+    favicon16x16: /favicon-16x16.png
+    favicon32x32: /favicon-32x32.png
+    apple_touch_icon: /apple-touch-icon.png
+    safari_pinned_tab: /favicon.ico
 
   label:
     text: "Home"
@@ -82,20 +80,16 @@ params:
     Content: Welcome to my blog
 
   socialIcons:
-    - name: twitter
-      url: "https://twitter.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/Zhoutao822/"
 
   analytics:
     google:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "Tao"
     bing:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "Tao"
     yandex:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "Tao"
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -103,7 +97,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/zhoutao822.github.io/content"
+    URL: "https://github.com/Zhoutao822/zhoutao822.github.io/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -117,20 +111,35 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - name: Archive
+      url: archives/
+      weight: 5
+    - name: Tags
+      url: tags/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - name: Categories
+      url: categories/
+      weight: 15
+    - name: Series
+      url: series/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
+    - name: Search
+      url: search/
+      weight: 25
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:

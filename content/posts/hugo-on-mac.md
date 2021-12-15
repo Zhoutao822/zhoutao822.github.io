@@ -1,20 +1,26 @@
 ---
 title: "Hugo On Mac"
 date: 2021-12-12T11:18:58+08:00
+tags: ["hugo", "github pages", "typora", "picgo", "mathjax", "utteranc"]
+categories: ["tools"]
+series: ["hugo on mac"]
+summary: "Hugo + Github Pages + Typora搭建Markdown博客"
 draft: false
-ShowToc: true
-summary: Hugo + Github Pages + Typora搭建Markdown博客
+editPost:
+  URL: "https://github.com/Zhoutao822/zhoutao822.github.io/tree/main/content/"
+  Text: "Suggest Changes" 
+  appendFilePath: true
 ---
 
 ## 1. Github Pages设置与配置
 
 首先需要创建一个名称为`{OwnerName}.github.io`的Public仓库，如果仓库名称为其他，那么最终你的Github Pages的域名就不是`https://{OwnerName}.github.io`了，而是`https://{OwnerName}.github.io/{RepoName}`，而且如果这里不是Public而是Private的话，需要**付费**才能将Private仓库作为Github Pages使用。
 
-![Screen Shot 2021-12-11 at 22.15.35](https://s2.loli.net/2021/12/12/gHs9LituUfGZP1Q.png)
+![gHs9LituUfGZP1Q](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132303678.png)
 
 然后创建一个新的分支`gh-pages`，这个用于后续通过Github Action部署Hugo的静态页面，作为Github Pages的主页；也就是说我们的`main`分支保存整个Hugo博客工程，而`gh-pages`分支保存自动生成的静态页面。在仓库Setting下设置Github Pages的Source为`gh-pages`分支，勾选上`Enforce HTTPS`，最终访问的域名就是`https`了。
 
-![Screen Shot 2021-12-12 at 10.37.46](https://s2.loli.net/2021/12/12/4CFL5oPfKSMBm8X.png)
+![4CFL5oPfKSMBm8X](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132304078.png)
 
 最后clone一下这个仓库的main分支到本地即可。
 
@@ -139,7 +145,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-![Screen Shot 2021-12-12 at 11.26.34](https://s2.loli.net/2021/12/12/d8xn2DCkLGQJfbs.png)
+![d8xn2DCkLGQJfbs](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132304419.png)
 
 `PaperMod`主题很丰富，需要通过`config`文件进行配置。
 
@@ -184,7 +190,7 @@ jobs:
 
 push成功后可以查看Github Action进度。
 
-![Screen Shot 2021-12-12 at 11.46.24](https://s2.loli.net/2021/12/12/J4Xtokv3ZCYbMdl.png)
+![J4Xtokv3ZCYbMdl](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132305454.png)
 
 ## 3. Typora与PicGo
 
@@ -192,15 +198,15 @@ push成功后可以查看Github Action进度。
 
 通过`brew install picgo --cask`安装PicGo，用于图片上传，这里我使用的是SM.MS图床，注册账号并生成token即可使用，可以把上传时重命名勾选上。
 
-![Screen Shot 2021-12-12 at 13.16.52](https://s2.loli.net/2021/12/12/o32KObQySRwemza.png)
+![o32KObQySRwemza](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132305375.png)
 
-![Screen Shot 2021-12-12 at 13.17.06](https://s2.loli.net/2021/12/12/WkbOBI3LKY4UiQZ.png)
+![WkbOBI3LKY4UiQZ](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132305522.png)
 
 ### 3.2 [Typora](https://typora.io/)安装与配置
 
 通过`brew install typora --cask`安装Typora，目前1.0版本后是需要付费使用，0.11版本及之前是免费的；安装完Typora之后需要设置插入图片时的操作，比如在插入本地图片时将图片自动通过PicGo上传到SM.MS图床上，那么Markdown文件中就只需要通过Url显示图片了。
 
-![Screen Shot 2021-12-12 at 13.13.53](https://s2.loli.net/2021/12/12/OAacZImENtKvCeS.png)
+![OAacZImENtKvCeS](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132305334.png)
 
 ## 4. 其它配置
 
@@ -364,7 +370,7 @@ $$
 $$
 ```
 
-![Screen Shot 2021-12-12 at 16.10.56](https://s2.loli.net/2021/12/12/1h9InYPCp5AEkT3.png)
+![1h9InYPCp5AEkT3](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132306892.png)
 
 因此需要借助JS库来实现Markdown中Mathjax的渲染，参考[在Hugo中使用MathJax](https://note.qidong.name/2018/03/hugo-mathjax/)。首先创建一个文件`layouts/partials/mathjax.html`
 
@@ -408,13 +414,13 @@ math: true
 
 最后效果为
 
-![Screen Shot 2021-12-12 at 16.22.56](https://s2.loli.net/2021/12/12/oPtqYfX3QcuzMml.png)
+![oPtqYfX3QcuzMml](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132306087.png)
 
 ### 4.3 utteranc评论系统
 
 博客系统必不可少的就是评论系统，utteranc是一个基于Github的评论系统，它是一个Github App，它会将评论转为issue记录在仓库中，没有额外配置。首先安装
 
-![Screen Shot 2021-12-12 at 16.26.44](https://s2.loli.net/2021/12/12/lQhXsLu8viBdW5T.png)
+![lQhXsLu8viBdW5T](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132306191.png)
 
 然后创建一个文件`layouts/partials/comments.html`
 
@@ -442,11 +448,9 @@ params:
     theme: "github-dark"
 ```
 
-![Screen Shot 2021-12-12 at 16.35.50](https://s2.loli.net/2021/12/12/GW8ztbqhgiKxZMI.png)
+![GW8ztbqhgiKxZMI](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132306067.png)
 
-可以到仓库的issue中查看到，此条评论被成功记录
-
-![Screen Shot 2021-12-12 at 16.36.12](https://s2.loli.net/2021/12/12/3XzY4DoctP6EuMw.png)
+可以到仓库的issue中查看到，此条评论被成功记录。
 
 ## 参考
 
