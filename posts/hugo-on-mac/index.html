@@ -443,13 +443,13 @@ $$
 </code></pre></div><p>然后创建<code>layouts/partials/extend_head.html</code>，内容如下，引入<code>mathjax.html</code>；<code>extend_head.html</code>会被hugo自动加载到项目静态资源<code>head.html</code>中。</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>{{- partial &#34;mathjax.html&#34; . }}
 </code></pre></div><p>由于<code>mathjax.html</code>中使用了<code>.Params.math</code>，所以可以通过在Markdown文件头添加<code>math: true</code>字段实现按需渲染</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown>---
-title: &#34;My First Post&#34;
+<pre tabindex=0><code>---
+title: &quot;My First Post&quot;
 date: 2021-12-12T11:18:58+08:00
 draft: false
 math: true
 ---
-</code></pre></div><p>最后效果为</p>
+</code></pre><p>最后效果为</p>
 <p><img loading=lazy src=https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132306087.png alt=oPtqYfX3QcuzMml>
 </p>
 <h3 id=43-utteranc评论系统>4.3 utteranc评论系统<a hidden class=anchor aria-hidden=true href=#43-utteranc评论系统>#</a></h3>
