@@ -403,7 +403,7 @@ $$
 
 由于`mathjax.html`中使用了`.Params.math`，所以可以通过在Markdown文件头添加`math: true`字段实现按需渲染
 
-```markdown
+```
 ---
 title: "My First Post"
 date: 2021-12-12T11:18:58+08:00

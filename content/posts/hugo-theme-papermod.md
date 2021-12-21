@@ -56,7 +56,7 @@ taxonomies:
 
 只需要在markdown中声明即可自动归档
 
-```markdown
+```
 ---
 title: "Hugo On Mac"
 date: 2021-12-12T11:18:58+08:00
@@ -94,7 +94,7 @@ menu:
 
 Search也是PaperMod主题支持的，首先添加文件`content/search.md`
 
-```markdown
+```
 ---
 title: "Search" # in any language you want
 layout: "search" # is necessary
@@ -130,7 +130,7 @@ params:
 
 Archive的支持只需要添加文件`content/archives.md`
 
-```markdown
+```
 ---
 title: "Archive"
 layout: "archives"
@@ -151,7 +151,7 @@ summary: archives
 
 Hugo支持默认模板，当执行`hugo new blog.md`时使用模板生成`blog.md`，可以在创建markdown时自动添加部分属性，修改`archetypes/default.md`
 
-```markdown
+```
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}

@@ -1,8 +1,8 @@
 ---
 title: "Android Lint"
 date: 2021-12-13T21:31:53+08:00
-tags: [""]
-categories: [""]
+tags: ["lint", "android"]
+categories: ["android"]
 series: [""]
 summary: "Summary todo"
 draft: true
@@ -70,7 +70,7 @@ if (BuildConfig.DEBUG){
     android:viewportWidth="24"
     android:viewportHeight="24">
   <path
-      android:pathData="M6.4806,8.3938C4.4996,8.3938 2.8937,9.9997 2.8937,11.9807C2.8937,13.9617 4.4996,15.5676 6.4806,15.5676C7.399,15.5676 8.2359,15.2233 8.871,14.655V13.1798H6.7797C6.2827,13.1798 5.8797,12.7768 5.8797,12.2798C5.8797,11.7827 6.2827,11.3798 6.7797,11.3798H9.771C10.2681,11.3798 10.671,11.7827 10.671,12.2798V15.0312C10.671,15.2582 10.5852,15.4768 10.4309,15.6432C9.4482,16.7026 8.0414,17.3676 6.4806,17.3676C3.5055,17.3676 1.0937,14.9558 1.0937,11.9807C1.0937,9.0056 3.5055,6.5938 6.4806,6.5938C7.6923,6.5938 8.8129,6.9949 9.7133,7.6712C10.1107,7.9697 10.1909,8.5339 9.8924,8.9313C9.5939,9.3287 9.0297,9.4089 8.6322,9.1104C8.0329,8.6602 7.2892,8.3938 6.4806,8.3938ZM15.722,7.4952C15.722,6.9981 16.1249,6.5952 16.622,6.5952H22.0063C22.5033,6.5952 22.9063,6.9981 22.9063,7.4952C22.9063,7.9923 22.5033,8.3952 22.0063,8.3952H17.522V11.3812H22.0063C22.5033,11.3812 22.9063,11.7842 22.9063,12.2812C22.9063,12.7783 22.5033,13.1812 22.0063,13.1812H17.522V16.469C17.522,16.9661 17.119,17.369 16.622,17.369C16.1249,17.369 15.722,16.9661 15.722,16.469V12.2812V7.4952ZM14.0954,7.4952C14.0954,6.9981 13.6924,6.5952 13.1954,6.5952C12.6983,6.5952 12.2954,6.9981 12.2954,7.4952V16.469C12.2954,16.9661 12.6983,17.369 13.1954,17.369C13.6924,17.369 14.0954,16.9661 14.0954,16.469V7.4952Z"
+      android:pathData="M6.4806,8.3938C4.4996,8.3938 "
       android:fillType="evenOdd">
     <aapt:attr name="android:fillColor">
       <gradient 
@@ -164,6 +164,104 @@ private static final Implementation IMPLEMENTATION =
     new Implementation(DebugAndLogDetector.class, Scope.JAVA_FILE_SCOPE);
 ```
 
+最后就是编写扫描代码的规则，以`DebugToLogEnable`规则为例，我们需要扫描到代码里的`BuildConfig.DEBUG`字段，如果扫描则将对应的文件名、行号信息输出；如何定位，这里使用了AST与PSI规则，简而言之就是对一个文本文件进行结构化分析，取出对应的字段保存在某个对象中，具体定义可以参考[Implementing a Parser and PSI](https://kana112233.github.io/intellij-sdk-docs-cn/reference_guide/custom_language_support/implementing_parser_and_psi.html)
+
+这里我们需要重写`getApplicableReferenceNames`用于查找引用，返回值为需要查询的字段名称
+
+```java
+@Nullable
+@Override
+public List<String> getApplicableReferenceNames() {
+    return Arrays.asList("DEBUG", "BuildConfig");
+}
+```
+
+通过`getApplicableReferenceNames`定义好的查询字段，lint运行起来后会调用`visitReference`处理查询到的结果，所以重写`visitReference`方法
+
+```java
+@Override
+public void visitReference(@NotNull JavaContext context, @NotNull UReferenceExpression reference, @NotNull PsiElement referenced) {
+    // reference是用于保存查询字段的对象
+    if ("DEBUG".equals(reference.getResolvedName())){
+        // 通过这个对象查询父节点，并拿到父节点的name，即DEBUG的类名
+        PsiElement parent = referenced.getParent();
+        String name = ((PsiClassImpl) parent).getName();
+        // 拿到类名直接判断即可
+        if ("BuildConfig".equals(name)){
+            context.report(ISSUE_DEBUG, reference, context.getNameLocation(reference)
+                    , "change \"BuildConfig.DEBUG\" to \"BuildConfig.LOG_ENABLE\"");
+        }
+    }
+}
+```
+
+在某些场景中，需要扫描的结构比较复杂，PSI结构不明确，可以在Android Studio中安装PsiViewer插件，这个可以直接分析出文件的PSI结构，便于前期代码编写，以 `LogWithinDebug`为例，首先需要定义查找的字段，不同于`DebugToLogEnable`， `LogWithinDebug`需要查找到某些方法（`ZMLog.i, ZMLog.d`）的使用位置
+
+```java
+@Nullable
+@Override
+public List<String> getApplicableMethodNames() {
+    return Arrays.asList(
+            "d",
+            "e",
+            "i",
+            "v",
+            "w"
+    );
+}
+```
+
+```java
+@Override
+public void visitMethodCall(@NotNull JavaContext context, @NotNull UCallExpression node, @NotNull PsiMethod method) {
+    JavaEvaluator evaluator = context.getEvaluator();
+    // isMemberInClass可以判断方法所在的类
+    if (evaluator.isMemberInClass(method, ZMLOG_CLS)) {
+        if (!isWrappedByLogEnable(node, context)) {
+            context.report(ISSUE_LOG_WITHIN_LOG_ENABLE, node, context.getNameLocation(node)
+                    , "Wrap ZMLog with if(BuildConfig.LOG_ENABLE)");
+        }
+    }
+}
+```
+
+![Screen Shot 2021-12-21 at 21.58.19](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112212201772.png)
+
+```java
+// isWrappedByLogEnable判断ZMLog.i方法是否在BuildConfig.LOG_ENABLE条件中
+private boolean isWrappedByLogEnable(UCallExpression node, JavaContext context) {
+    boolean result = false;
+    // kotlin PSI结构与 java有一些区别，但是依然可以使用PsiViewer来解析
+    if (node instanceof KotlinUFunctionCallExpression) {
+        for (UElement parent = node.getUastParent(); parent != null; parent = parent.getUastParent()) {
+            try {
+                if (!(parent instanceof KotlinUIfExpression)){
+                    continue;
+                }
+                KtExpression condition = ((KotlinUIfExpression) parent).getSourcePsi().getCondition();
+                if (condition.getText().contains("BuildConfig.LOG_ENABLE") || condition.getText().contains("us.zoom.androidlib.BuildConfig.LOG_ENABLE")){
+                    result = true;
+                    break;
+                }
+            } catch (Exception e) {
+
+            }
+        }
+    } else {
+        // 根据PsiViewer的结构分析，可以发现只要一直找父节点就可以拿到PsiIfStatement，这个恰好表示的是If语句，那么只需要拿到条件表达式并与BuildConfig.LOG_ENABLE比对即可，同理可以对kotlin文件进行判断
+        for (PsiElement parent = node.getSourcePsi().getParent(); parent != null && !(parent instanceof MethodElement); parent = parent.getParent()) {
+            if (parent instanceof PsiIfStatement) {
+                PsiExpression condition = ((PsiIfStatement) parent).getCondition();
+                if (condition.getText().contains("BuildConfig.LOG_ENABLE") || condition.getText().contains("us.zoom.androidlib.BuildConfig.LOG_ENABLE")){
+                    result = true;
+                    break;
+                }
+            }
+        }
+    }
+    return result;
+}
+```
 
 
 
