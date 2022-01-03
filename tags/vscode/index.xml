@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>vscode on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/vscode/</link>
+    <description>Recent content in vscode on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Jan 2022 17:29:45 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode搭建LaTeX论文写作环境</title>
+      <link>https://zhoutao822.github.io/posts/latex-vscode/</link>
+      <pubDate>Mon, 03 Jan 2022 17:29:45 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/latex-vscode/</guid>
+      <description>USTC LaTex模板编译及使用</description>
+    </item>
+    
+  </channel>
+</rss>

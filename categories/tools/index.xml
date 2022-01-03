@@ -10,7 +10,16 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Jan 2022 17:19:17 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 17:29:45 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VSCode搭建LaTeX论文写作环境</title>
+      <link>https://zhoutao822.github.io/posts/latex-vscode/</link>
+      <pubDate>Mon, 03 Jan 2022 17:29:45 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/latex-vscode/</guid>
+      <description>USTC LaTex模板编译及使用</description>
+    </item>
+    
     <item>
       <title>使用Docker方式安装chevereto图床</title>
       <link>https://zhoutao822.github.io/posts/chevereto/</link>
