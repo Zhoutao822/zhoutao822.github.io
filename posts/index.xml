@@ -10,7 +10,25 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jan 2022 14:10:19 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Jan 2022 17:19:17 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Docker方式安装chevereto图床</title>
+      <link>https://zhoutao822.github.io/posts/chevereto/</link>
+      <pubDate>Mon, 03 Jan 2022 17:19:17 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/chevereto/</guid>
+      <description>chevereto是具有拖放上传、多服务器支持、图像审核、图像分类、用户帐户、私人相册等功能的卓越的图像上传工具</description>
+    </item>
+    
+    <item>
+      <title>使用Docker方式安装Seafile私人网盘</title>
+      <link>https://zhoutao822.github.io/posts/seafile/</link>
+      <pubDate>Mon, 03 Jan 2022 17:14:59 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/seafile/</guid>
+      <description>Seafile是一款开源的企业云盘，注重可靠性和性能。支持 Windows, Mac, Linux, iOS, Android 平台。支持文件同步或者直接挂载到本地访问</description>
+    </item>
+    
     <item>
       <title>K3s on Mac</title>
       <link>https://zhoutao822.github.io/posts/k3s-on-mac/</link>
