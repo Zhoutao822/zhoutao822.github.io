@@ -16,7 +16,7 @@ editPost:
 
 ### 1.1 Multipass说明
 
-Multipass是一个可以用于开启Ubuntu虚拟机的命令行工具，你可以把它当做一个无图形界面的`Virtual Box`或者`Parallels Desktop`。在mac上可以通过brew安装，命令为
+Multipass是一个轻量级的可以用于开启Ubuntu虚拟机的命令行工具，你可以把它当做一个无图形界面的`Virtual Box`或者`Parallels Desktop`。在mac上可以通过brew安装，命令为
 
 ```shell
 brew install --cask multipass
