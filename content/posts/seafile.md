@@ -14,7 +14,7 @@ editPost:
 
 ## 1. Ubuntu服务器安装docker
 
-参考[Docker方式安装chevereto图床]()
+参考[Docker方式安装chevereto图床](https://zhoutao822.github.io/posts/chevereto/)
 
 ## 2. 配置docker-compose
 
