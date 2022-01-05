@@ -29,5 +29,14 @@
       <description>Seafile是一款开源的企业云盘，注重可靠性和性能。支持 Windows, Mac, Linux, iOS, Android 平台。支持文件同步或者直接挂载到本地访问</description>
     </item>
     
+    <item>
+      <title>Build Android App with Commandline</title>
+      <link>https://zhoutao822.github.io/posts/android-build-commandline/</link>
+      <pubDate>Mon, 20 Dec 2021 21:32:24 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/android-build-commandline/</guid>
+      <description>Jenkins上没有Android Studio，只能通过命令行工具编译Android项目</description>
+    </item>
+    
   </channel>
 </rss>

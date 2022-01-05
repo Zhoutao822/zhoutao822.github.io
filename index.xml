@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Build Android App with Commandline</title>
+      <link>https://zhoutao822.github.io/posts/android-build-commandline/</link>
+      <pubDate>Mon, 20 Dec 2021 21:32:24 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/android-build-commandline/</guid>
+      <description>Jenkins上没有Android Studio，只能通过命令行工具编译Android项目</description>
+    </item>
+    
+    <item>
       <title>Hugo Theme PaperMod</title>
       <link>https://zhoutao822.github.io/posts/hugo-theme-papermod/</link>
       <pubDate>Sun, 12 Dec 2021 20:55:38 +0800</pubDate>
