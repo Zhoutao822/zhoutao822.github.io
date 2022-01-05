@@ -5,7 +5,7 @@ tags: ["android", "sdkmanager", "ndk", "docker", "jenkins"]
 categories: ["tools"]
 series: [""]
 summary: "Jenkins上没有Android Studio，只能通过命令行工具编译Android项目"
-draft: true
+draft: false
 editPost:
   URL: "https://github.com/Zhoutao822/zhoutao822.github.io/tree/main/content/"
   Text: "Suggest Changes"

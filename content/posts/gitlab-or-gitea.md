@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "Gitlab or Gitea"
+date: 2022-01-05T15:45:48+08:00
 tags: [""]
 categories: [""]
 series: [""]

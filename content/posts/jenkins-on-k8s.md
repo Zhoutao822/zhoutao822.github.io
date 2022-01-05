@@ -1,6 +1,6 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
+title: "Jenkins on K8s"
+date: 2022-01-05T15:46:59+08:00
 tags: [""]
 categories: [""]
 series: [""]
