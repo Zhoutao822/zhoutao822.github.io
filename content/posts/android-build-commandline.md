@@ -87,7 +87,7 @@ bin  lib  NOTICE.txt  source.properties
 
 ```shell
 ~/android_sdk ❯ pwd
-/root/sdk
+/root/android_sdk
 ```
 
 最后需要设置环境变量以及ANDROID_SDK_ROOT
@@ -136,8 +136,8 @@ export ANDROID_SDK_ROOT=/root/android_sdk
 | `--include_obsolete`                      | 在列出或更新软件包时纳入已过时的软件包。 仅适用于 `--list` 和 `--update`。 |
 | `--no_https`                              | 强制所有连接使用 HTTP 而不是 HTTPS。                         |
 | `--verbose`                               | 详细输出模式。该模式会输出错误、警告和参考性消息。           |
-| `--proxy={http | socks}`                  | 通过给定类型的代理建立连接：用 `http` 指定一个高层级协议（如 HTTP 或 FTP）的代理，或用 `socks` 指定一个 SOCKS（V4 或 V5）代理。 |
-| `--proxy_host={IP_address | DNS_address}` | 要使用的代理的 IP 或 DNS 地址。                              |
+| `--proxy={http / socks}`                  | 通过给定类型的代理建立连接：用 `http` 指定一个高层级协议（如 HTTP 或 FTP）的代理，或用 `socks` 指定一个 SOCKS（V4 或 V5）代理。 |
+| `--proxy_host={IP_address / DNS_address}` | 要使用的代理的 IP 或 DNS 地址。                              |
 | `--proxy_port=port_number`                | 要连接到的代理端口号。                                       |
 
 `ARG DEBIAN_FRONTEND=noninteractive`避免`apt update/install`时弹出选择框
