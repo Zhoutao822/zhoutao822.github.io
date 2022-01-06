@@ -2,7 +2,7 @@ baseURL: 'https://zhoutao822.github.io/'
 languageCode: en-us
 title: Tao's Notes
 theme: PaperMod
-paginate: 5
+paginate: 8
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -56,23 +56,18 @@ params:
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
-    imageTitle: my image
+    enabled: true # needs to be explicitly set
+    title: Tao's Notes
+    imageUrl: /android-chrome-192x192.png
+    imageWidth: 140
+    imageHeight: 140
+    imageTitle: my avatar
     buttons:
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
 
   # home-info mode
   homeInfoParams:
