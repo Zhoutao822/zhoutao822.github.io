@@ -93,7 +93,7 @@ bin  lib  NOTICE.txt  source.properties
 最后需要设置环境变量以及ANDROID_SDK_ROOT
 
 ```shell
-PATH=$PATH:/root/android_sdk/cmdline-tools/latest/bin
+export PATH=$PATH:/root/android_sdk/cmdline-tools/latest/bin
 export ANDROID_SDK_ROOT=/root/android_sdk
 ```
 
@@ -120,8 +120,8 @@ sdkmanager "cmake;3.18.1"
 最终环境变量如下
 
 ```bash
-PATH=$PATH:/root/android_sdk/cmdline-tools/latest/bin
-PATH=$PATH:/root/android_sdk/cmake/3.18.1/bin
+export PATH=$PATH:/root/android_sdk/cmdline-tools/latest/bin
+export PATH=$PATH:/root/android_sdk/cmake/3.18.1/bin
 export ANDROID_SDK_ROOT=/root/android_sdk
 ```
 

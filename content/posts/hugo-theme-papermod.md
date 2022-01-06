@@ -371,13 +371,35 @@ $$
 
 ## 4. PicGo图床
 
-SM.MS图床有资源限制，建议使用gitee或者github作为图床，gitee存在单张图片不能超过2MB的限制，这里就需要使用PicGo的Compress插件[picgo-plugin-compress](https://github.com/JuZiSang/picgo-plugin-compress)，在mac上安装这个插件可能会安装不上，建议翻墙或者通过命令行安装
+SM.MS图床有资源限制，建议使用gitee或者github作为图床，gitee存在单张图片不能超过2MB的限制，这里就需要使用PicGo的Compress插件[picgo-plugin-compress](https://github.com/JuZiSang/picgo-plugin-compress)并且使用lubangitee算法，在mac上安装这个插件可能会安装不上，建议~~翻墙~~或者通过命令行安装
+
 
 ```shell
-❯ cd ~/Library/Application\ Support/picgo
-❯ rm -rf node_modules
-❯ npm install picgo-plugin-compress --save --registry=https://registry.npm.taobao.org  --ignore-scripts
-❯ npm install --registry=https://registry.npm.taobao.org
+# 首先要安装这些库，否则在mac上使用lubangitee压缩算法时会失败
+brew install node automake autoconf libtool pkgconfig libpng nasm
+```
+
+然后进入到picgo目录中通过npm安装[picgo-plugin-compress](https://github.com/JuZiSang/picgo-plugin-compress)插件
+
+
+```shell
+cd ~/Library/Application\ Support/picgo
+rm -rf node_modules
+npm install picgo-plugin-compress --save --registry=https://registry.npm.taobao.org  --ignore-scripts
+npm install --registry=https://registry.npm.taobao.org
+```
+
+如果在使用lubangitee出现以下错误时，说明上面几个库有可能漏掉了，解决方案来自[mozjpeg pre-build test failed](https://github.com/imagemin/imagemin/issues/168)
+
+
+```
+2022-01-06 20:18:41 [PicGo ERROR] 
+------Error Stack Begin------
+Error: spawn /Users/tao/Library/Application Support/picgo/node_modules/mozjpeg/vendor/cjpeg ENOENT
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:264:19)
+    at onErrorNT (internal/child_process.js:456:16)
+    at processTicksAndRejections (internal/process/task_queues.js:84:9)
+-------Error Stack End------- 
 ```
 
 ## 参考

@@ -1,7 +1,7 @@
 ---
-title: "K3s on Mac"
+title: "K8s with Mac"
 date: 2022-01-02T14:10:19+08:00
-tags: ["k3s", "k8s", "multipass"]
+tags: ["k3s", "k8s", "k9s","multipass"]
 categories: ["devops"]
 series: [""]
 summary: "Run k8s on Mac with k3s and multipass"
@@ -12,7 +12,7 @@ editPost:
   appendFilePath: true 
 ---
 
-## 1. Multipass && K3s
+## 1. Multipass && K3s && k9s
 
 ### 1.1 Multipass说明
 
@@ -277,7 +277,13 @@ echo "Or use kubectl directly"
 echo "kubectl --kubeconfig ${NAME}-kubeconfig.yaml get nodes"
 ```
 
-### 1.4 一些问题
+### 1.4 k9s
+
+K9s 提供了一个与 K8s 集群交互的终端 UI，用于简化导航、观察以及管理应用程序。K9s 会持续监控 K8s 的变化，并提供后续命令与所观察到的资源进行交互。可以利用如下GUI管理k8s
+
+![Screen Shot 2022-01-06 at 19.43.21](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062048276.png)
+
+### 1.5 一些问题
 
 1. brew无法安装cask，超时之类，可以使用[中科大的brew源](https://mirrors.ustc.edu.cn/help/homebrew-cask.git.html)；
 2. 在启用某些VPN软件时，multipass无法拉取镜像，导致无法创建Ubuntu实例或者无法安装k3s，只能关闭VPN软件；
@@ -287,7 +293,7 @@ echo "kubectl --kubeconfig ${NAME}-kubeconfig.yaml get nodes"
 
 步骤如下：
 
-1. Brew安装multipass和kubectl-cli；
+1. Brew安装multipass、k9s和kubectl-cli；
 2. 创建`k3s-launch.sh`，并复制粘贴上面的脚本内容，需要自行修改以适配自己的环境；
 3. 运行`bash k3s-launch.sh`，等待集群部署，脚本执行成功后可以看到multipass多了3个实例，不带数字的是master节点，其他是slave节点，而且目录下多了几个文件；
 
@@ -404,9 +410,28 @@ Commercial support is available at
 </html>
 ```
 
-## 参考
+6. 利用k9s查看k8s集群状态，详细玩法可以去看[k9s官网](https://k9scli.io)
+
+```shell
+k9s --kubeconfig demo-cluster-kubeconfig.yaml -n dev
+```
+
+pod状态
+
+![Screen Shot 2022-01-06 at 20.51.53](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054107.png)
+
+service状态
+
+![Screen Shot 2022-01-06 at 20.52.04](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054265.png)
+
+deploy状态
+
+![Screen Shot 2022-01-06 at 20.53.11](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054797.png)
+
+# 参考
 
 1. [k3s cluster on multipass instances](https://github.com/superseb/multipass-k3s)
 2. [K3s: Lightweight Kubernetes](https://k3s.io/)
 2. [Ubuntu VMs on demand for any workstation](https://multipass.run/)
 2. [K3s 安装选项介绍](https://docs.rancher.cn/docs/k3s/installation/install-options/_index)
+2. [k9s Kubernetes CLI To Manage Your Clusters In Style!](https://k9scli.io)
