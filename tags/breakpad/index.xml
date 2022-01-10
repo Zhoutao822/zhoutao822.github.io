@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>breakpad on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/breakpad/</link>
+    <description>Recent content in breakpad on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jan 2022 10:21:00 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/breakpad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breakpad</title>
+      <link>https://zhoutao822.github.io/posts/breakpad/</link>
+      <pubDate>Mon, 10 Jan 2022 10:21:00 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/breakpad/</guid>
+      <description>Breakpad是一个库和工具套件可以让你发布的应用程序（把编译器提供的调试信息剥离掉的）给用户，记录了崩溃紧凑的“dump”文件，发送回您的服务器，并从这些minidump产生C和C++堆栈踪迹。</description>
+    </item>
+    
+  </channel>
+</rss>
