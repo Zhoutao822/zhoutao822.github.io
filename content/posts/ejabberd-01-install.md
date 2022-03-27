@@ -11,3 +11,7 @@ editPost:
   Text: "Suggest Changes"
   appendFilePath: true 
 ---
+
+https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures
+
+https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures

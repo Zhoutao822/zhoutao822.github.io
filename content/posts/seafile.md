@@ -71,11 +71,11 @@ networks:
 
 不用修改权限，最后启动`docker-compose up -d`，然后就可以通过IP+端口号（如果配置了域名也可以用域名）访问seafile云盘了（**应该只能通过http访问，https是不可以的，除非配置过**）。首次登录如下：
 
-![seafile1](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201031718577.PNG)
+![seafile1](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031718577.PNG)
 
 测试上传文件
 
-![seafile2](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201031718273.PNG)
+![seafile2](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031718273.PNG)
 
 ## 3. 数据迁移
 

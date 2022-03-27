@@ -16,9 +16,9 @@ editPost:
 
 首先为网站添加一个Icon，这里直接使用这个网站[Favicon Generator. For real.](https://realfavicongenerator.net/)，上传任意一张喜欢的图片即可生成各种平台需要的favicon。点击下载，将所有图片资源保存在`static`目录下
 
-![Screen Shot 2021-12-13 at 21.40.22](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112132246967.png)
+![Screen Shot 2021-12-13 at 21.40.22](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112132246967.png)
 
-![Screen Shot 2021-12-14 at 21.51.14](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112142151006.png)
+![Screen Shot 2021-12-14 at 21.51.14](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112142151006.png)
 
 ## 2. PaperMod Theme Config
 
@@ -141,11 +141,11 @@ summary: archives
 
 最终效果如下：
 
-![Screen Shot 2021-12-15 at 21.15.51](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112152116458.png)
+![Screen Shot 2021-12-15 at 21.15.51](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112152116458.png)
 
-![Screen Shot 2021-12-15 at 21.16.05](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112152116435.png)
+![Screen Shot 2021-12-15 at 21.16.05](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112152116435.png)
 
-![Screen Shot 2021-12-15 at 21.16.11](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112152116193.png)
+![Screen Shot 2021-12-15 at 21.16.11](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112152116193.png)
 
 ### 2.4 Archetypes
 
@@ -361,11 +361,11 @@ Gini(D) = \sum^{|\mathbb{Y}|}_{k=1}\sum_{k' \neq k}p_kp_{k'}
 $$
 ```
 
-![Screen Shot 2021-12-15 at 21.34.07](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112152134819.png)
+![Screen Shot 2021-12-15 at 21.34.07](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112152134819.png)
 
 就算修改了`mathjax.html`或者使用`katex`，这里无法避免转义字符的问题，期望的显示效果如上，但是实际效果如下
 
-![Screen Shot 2021-12-15 at 21.34.54](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202112152135966.png)
+![Screen Shot 2021-12-15 at 21.34.54](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202112152135966.png)
 
 第一点就是数学公式中添加`\\`应该实现换行，这里换行失效，第二点就是`\_`转义字符期望显示`_`，但是变成下角标（`Gain\_ratio`），第三点就是某些公式可以在Typora中正常渲染，但是在Hugo中无法解析，推测也是跟Hugo渲染相关的问题，这个问题在Hexo中也有（[结合MathType和MathJax在Hexo博客中插入数学公式](https://zhuanlan.zhihu.com/p/108766968)），但是Hexo可以修改其源码来解决这个问题，Hugo不适合修改源码解决。所以最终结论是，在数学公式中**不要使用下划线，因为会解析错误**，**不要使用\\\\实现公式内换行**，**复杂公式需要检查**，当然也可以选择不要在Hugo中使用复杂公式。
 

@@ -281,7 +281,7 @@ echo "kubectl --kubeconfig ${NAME}-kubeconfig.yaml get nodes"
 
 K9s 提供了一个与 K8s 集群交互的终端 UI，用于简化导航、观察以及管理应用程序。K9s 会持续监控 K8s 的变化，并提供后续命令与所观察到的资源进行交互。可以利用如下GUI管理k8s
 
-![Screen Shot 2022-01-06 at 19.43.21](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062048276.png)
+![Screen Shot 2022-01-06 at 19.43.21](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062048276.png)
 
 ### 1.5 一些问题
 
@@ -297,7 +297,7 @@ K9s 提供了一个与 K8s 集群交互的终端 UI，用于简化导航、观�
 2. 创建`k3s-launch.sh`，并复制粘贴上面的脚本内容，需要自行修改以适配自己的环境；
 3. 运行`bash k3s-launch.sh`，等待集群部署，脚本执行成功后可以看到multipass多了3个实例，不带数字的是master节点，其他是slave节点，而且目录下多了几个文件；
 
-![Screen Shot 2022-01-02 at 21.09.22](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201022109129.png)
+![Screen Shot 2022-01-02 at 21.09.22](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201022109129.png)
 
 ```
 ~/Projects/k3s ❯ ll                                                                                  21:13:40
@@ -339,38 +339,61 @@ spec:
 
 ```shell
 # get nodes查看节点是否存活
-~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml get nodes        ⎈ docker-desktop 21:13:53
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml get nodes
+```
+
+```
 NAME                       STATUS   ROLES                       AGE     VERSION
 k3s-agent-demo-cluster-1   Ready    <none>                      7h10m   v1.22.5+k3s1
 k3s-agent-demo-cluster-2   Ready    <none>                      7h9m    v1.22.5+k3s1
 k3s-server-demo-cluster    Ready    control-plane,etcd,master   7h11m   v1.22.5+k3s1
 ```
 
-   ```shell
-   # create namespace dev创建dev命名空间
-   ~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml create namespace dev
-   namespace/dev created
-   ```
+```shell
+# create namespace dev创建dev命名空间
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml create namespace dev
+```
+```
+namespace/dev created
+```
 
 ```shell
 # 创建测试pod
-~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml create -f deploy-nginx.yaml                       ⎈ docker-desktop 21:48:22
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml create -f deploy-nginx.yaml
+```
+```
 deployment.apps/nginx created
+```
+```shell
 # 查看pod状态
-~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml get pods -n dev                                   ⎈ docker-desktop 21:48:32
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml get pods -n dev    
+```
+```
 NAME                     READY   STATUS    RESTARTS   AGE
 nginx-66ffc897cf-55b6d   1/1     Running   0          53s
 nginx-66ffc897cf-d5r29   1/1     Running   0          53s
 nginx-66ffc897cf-vfpkg   1/1     Running   0          53s
+```
+```shell
 # 创建暴露给外部的Service
-~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml expose deploy nginx --name=svc-nginx --type=NodePort --port=80 --target-port=80 -n dev
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml expose deploy nginx --name=svc-nginx --type=NodePort --port=80 --target-port=80 -n dev
+```
+```
 service/svc-nginx exposed
+```
+```shell
 # 查看Service状态和端口号映射
-~/Projects/k3s ❯ kubectl --kubeconfig demo-cluster-kubeconfig.yaml get svc svc-nginx -n dev -o wide                  ⎈ docker-desktop 21:50:14
+kubectl --kubeconfig demo-cluster-kubeconfig.yaml get svc svc-nginx -n dev -o wide 
+```
+```
 NAME        TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
 svc-nginx   NodePort   10.43.227.135   <none>        80:30355/TCP   25s   run=nginx
+```
+```shell
 # 查看master节点ip
-~/Projects/k3s ❯ multipass list                                                                                                       21:50:39
+multipass list   
+```
+```
 Name                      State             IPv4             Image
 k3s-agent-demo-cluster-1  Running           192.168.64.16    Ubuntu 20.04 LTS
                                             10.42.1.0
@@ -381,8 +404,12 @@ k3s-agent-demo-cluster-2  Running           192.168.64.17    Ubuntu 20.04 LTS
 k3s-server-demo-cluster   Running           192.168.64.15    Ubuntu 20.04 LTS
                                             10.42.0.0
                                             10.42.0.1
+```
+```shell
 # 访问 192.168.64.15:30355，能够输出nginx信息
-~/Projects/k3s ❯ curl 192.168.64.15:30355                                                                                             21:51:45
+curl 192.168.64.15:30355    
+```
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -418,15 +445,15 @@ k9s --kubeconfig demo-cluster-kubeconfig.yaml -n dev
 
 pod状态
 
-![Screen Shot 2022-01-06 at 20.51.53](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054107.png)
+![Screen Shot 2022-01-06 at 20.51.53](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054107.png)
 
 service状态
 
-![Screen Shot 2022-01-06 at 20.52.04](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054265.png)
+![Screen Shot 2022-01-06 at 20.52.04](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054265.png)
 
 deploy状态
 
-![Screen Shot 2022-01-06 at 20.53.11](https://gitee.com/tao2333/hugo-pic/raw/master/pictures/202201062054797.png)
+![Screen Shot 2022-01-06 at 20.53.11](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054797.png)
 
 # 参考
 
