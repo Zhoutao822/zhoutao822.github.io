@@ -281,7 +281,7 @@ echo "kubectl --kubeconfig ${NAME}-kubeconfig.yaml get nodes"
 
 K9s 提供了一个与 K8s 集群交互的终端 UI，用于简化导航、观察以及管理应用程序。K9s 会持续监控 K8s 的变化，并提供后续命令与所观察到的资源进行交互。可以利用如下GUI管理k8s
 
-![Screen Shot 2022-01-06 at 19.43.21](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062048276.png)
+![Screen Shot 2022-01-06 at 19.43.21](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201062048276.png)
 
 ### 1.5 一些问题
 
@@ -297,7 +297,7 @@ K9s 提供了一个与 K8s 集群交互的终端 UI，用于简化导航、观�
 2. 创建`k3s-launch.sh`，并复制粘贴上面的脚本内容，需要自行修改以适配自己的环境；
 3. 运行`bash k3s-launch.sh`，等待集群部署，脚本执行成功后可以看到multipass多了3个实例，不带数字的是master节点，其他是slave节点，而且目录下多了几个文件；
 
-![Screen Shot 2022-01-02 at 21.09.22](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201022109129.png)
+![Screen Shot 2022-01-02 at 21.09.22](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201022109129.png)
 
 ```
 ~/Projects/k3s ❯ ll                                                                                  21:13:40
@@ -445,15 +445,15 @@ k9s --kubeconfig demo-cluster-kubeconfig.yaml -n dev
 
 pod状态
 
-![Screen Shot 2022-01-06 at 20.51.53](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054107.png)
+![Screen Shot 2022-01-06 at 20.51.53](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201062054107.png)
 
 service状态
 
-![Screen Shot 2022-01-06 at 20.52.04](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054265.png)
+![Screen Shot 2022-01-06 at 20.52.04](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201062054265.png)
 
 deploy状态
 
-![Screen Shot 2022-01-06 at 20.53.11](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201062054797.png)
+![Screen Shot 2022-01-06 at 20.53.11](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201062054797.png)
 
 # 参考
 

@@ -12,7 +12,7 @@ editPost:
   appendFilePath: true 
 ---
 
-![chevereto4](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031725388.png)
+![chevereto4](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031725388.png)
 
 ## 1. Ubuntu服务器安装docker
 
@@ -134,15 +134,15 @@ post_max_size =  256M;
 
 然后修改权限`sudo chown -R www-data:www-data database chevereto_images conf`，最后启动`docker-compose up -d`，然后就可以通过IP+端口号访问chevereto图床了（**应该只能通过http访问，https是不可以的**）。首次登录如下：
 
-![chevereto1](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031724813.png)
+![chevereto1](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031724813.png)
 
 修改语言为中文
 
-![chevereto2](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031724542.png)
+![chevereto2](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031724542.png)
 
 可以看到文件上传大小被修改为上面的`uploda.ini`的内容了
 
-![chevereto3](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031724378.png)
+![chevereto3](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031724378.png)
 
 ## 3. 数据迁移
 

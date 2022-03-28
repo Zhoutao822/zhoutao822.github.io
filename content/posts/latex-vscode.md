@@ -24,7 +24,7 @@ editPost:
 
 VSCode的安装没什么可说的，完成后需要在**扩展**中搜索`latex`，就可以找到需要的插件`LaTeX Workshop`，安装完成后需要配置一些参数，在设置中搜索`latex`，打开`settings.json`，加入以下参数
 
-![latex-workshop](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031847593.png)
+![latex-workshop](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031847593.png)
 
 ```json
 "latex-workshop.view.pdf.viewer": "tab",
@@ -129,19 +129,19 @@ VSCode的安装没什么可说的，完成后需要在**扩展**中搜索`latex`
 
 文件目录大概如下图，里面某些pdf和tex文件可能不同，但不重要
 
-![ustcthesis](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031847564.png)
+![ustcthesis](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031847564.png)
 
 用VSCode打开模板文件，并打开`main.tex`文件，这里可以先把`main.pdf`重命名一下，此时如果之前的步骤都是对的，那么VSCode的左下角会有一个勾的图标，点击后应该如下图
 
-![recipe](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031847515.png)
+![recipe](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031847515.png)
 
 这里会发现之前设置参数时加入的`recipe`都显示出来，中国科学技术大学学位论文 LaTeX 模板 需要用`latexmk`编译，所以直接双击`Recipe: latexmk`编译`main.tex`，生成`main.pdf`文件，在编译过程中会提示你缺少某些package，这些package里面有需要的一些样式文件，类似于CSS，弹出的窗口来自于`MikTeX Console`，点击确定下载即可，可能会需要点很多次，当所有需要的package下载完成后编译也可以继续下去，最后比对一下生成的`main.pdf`文件内容与重命名之前的`main.pdf`，看看有没有缺失或者显示不对的地方，如果有，再查找原因，一般来说问题出在缺少某些package。如果需要清理生成的临时文件只需要双击`Clean up`即可。
 
 这是我生成的pdf文件截图，第一张图我修改为`硕士`，第二张图生成当前时间。
 
-![1](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031847429.png)
+![1](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031847429.png)
 
-![2](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031847924.png)
+![2](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031847924.png)
 
 ## Mac环境
 
@@ -187,7 +187,7 @@ sudo tlmgr install package_name
 
 这些下载的package是可以在`/usr/local/texlive/2019basic/texmf-dist/tex/latex`下找到的，我的可以正确运行科大LaTeX模板的package截图如下，不想一个一个搜索的可以直接对照下载缺少的package。
 
-![3](https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures/202201031850753.png)
+![3](https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/202201031850753.png)
 
 最后同上测试一下能否正确生成pdf文件。
 

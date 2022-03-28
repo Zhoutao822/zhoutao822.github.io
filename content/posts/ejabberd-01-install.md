@@ -12,6 +12,8 @@ editPost:
   appendFilePath: true 
 ---
 
-https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures
+https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures
 
-https://raw.githubusercontent.com/Zhoutao822/hugo-pic/main/pictures
+https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures
+
+https://cdn.jsdelivr.net/gh/Zhoutao822/hugo-pic/pictures/
