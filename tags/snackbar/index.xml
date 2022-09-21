@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Snackbar on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/snackbar/</link>
+    <description>Recent content in Snackbar on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Jul 2019 21:46:04 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/snackbar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Material组件-Snackbar</title>
+      <link>https://zhoutao822.github.io/posts/snackbar/</link>
+      <pubDate>Tue, 23 Jul 2019 21:46:04 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/snackbar/</guid>
+      <description>Snackbar是类似与Toast的一种信息提示控件，但是与Toast不同的是Snackbar是从界面底部弹出的且支持一个点击事件，默认情况下Snackbar内部有两个子控件分别是TextView和Button，两者水平排列，TextView用于显示信息，Button用于实现点击事件。</description>
+    </item>
+    
+  </channel>
+</rss>

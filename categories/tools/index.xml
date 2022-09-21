@@ -74,5 +74,14 @@
       <description>Hugo + Github Pages + Typora搭建Markdown博客</description>
     </item>
     
+    <item>
+      <title>BottomSheetDialog</title>
+      <link>https://zhoutao822.github.io/posts/bottomsheetdialog/</link>
+      <pubDate>Fri, 14 Jun 2019 20:21:20 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/bottomsheetdialog/</guid>
+      <description>BottomSheetDialog使用以及相关问题</description>
+    </item>
+    
   </channel>
 </rss>

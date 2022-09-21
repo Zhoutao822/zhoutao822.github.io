@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Retrofit on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/retrofit/</link>
+    <description>Recent content in Retrofit on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jul 2019 09:58:58 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/retrofit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android框架-Retrofit与OkHttp</title>
+      <link>https://zhoutao822.github.io/posts/retrofit/</link>
+      <pubDate>Sat, 20 Jul 2019 09:58:58 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/retrofit/</guid>
+      <description>Http，超文本传输协议，Https，更加安全的超文本传输协议，目前大量用于客户端与服务端之间的信息交流，属于应用层协议，下面有传输层TCP协议、网络层IP协议以及数据链路层为其提供保障。以登录功能为例，每一次输入账户密码后点击登录按钮就做了一次对服务器的Http请求（POST），我们收到的结果比如账号密码错误或者登录成功等信息就是服务器对Http请求的回复。Http与Https的区别在于后者采用了SSL（Secure Socket Layer安全套接层），简而言之就是对传输的数据进行了加密。具体细节可以在&lt;a href=&#34;https://www.tutorialsteacher.com/https&#34;&gt;HTTPS Tutorials&lt;/a&gt;或者其他资料中找到。</description>
+    </item>
+    
+  </channel>
+</rss>

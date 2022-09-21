@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>BottomSheetDialog on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/bottomsheetdialog/</link>
+    <description>Recent content in BottomSheetDialog on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Jun 2019 20:21:20 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/bottomsheetdialog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BottomSheetDialog</title>
+      <link>https://zhoutao822.github.io/posts/bottomsheetdialog/</link>
+      <pubDate>Fri, 14 Jun 2019 20:21:20 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/bottomsheetdialog/</guid>
+      <description>BottomSheetDialog使用以及相关问题</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Android Q on Tao&#39;s Notes</title>
+    <link>https://zhoutao822.github.io/tags/android-q/</link>
+    <description>Recent content in Android Q on Tao&#39;s Notes</description>
+    <image>
+      <url>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://zhoutao822.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 11:02:06 +0800</lastBuildDate><atom:link href="https://zhoutao822.github.io/tags/android-q/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android-Q适配-存储方式</title>
+      <link>https://zhoutao822.github.io/posts/saf/</link>
+      <pubDate>Sat, 26 Oct 2019 11:02:06 +0800</pubDate>
+      
+      <guid>https://zhoutao822.github.io/posts/saf/</guid>
+      <description>Android Q之后对系统存储方式进行了调整，简而言之就是禁止开发人员随意通过路径访问操作外部存储文件，内部存储没有影响。这样做的目的很明显，即往后原生Android的文件管理器将不会出现各种App生成的乱七八糟的文件，不同类型的文件都在其各自相应的位置。</description>
+    </item>
+    
+  </channel>
+</rss>
